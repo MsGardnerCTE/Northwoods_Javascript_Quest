@@ -117,7 +117,7 @@ Each question displays the exact program and scenario. Choosing an answer reveal
 
 The loop editing lab preserves all five requested changes: five repetitions, false blocking, four-second delay, BonusSuper sound, and the added yellow LED command.
 
-An inline continuation panel sits beside the checklist. When all five tasks have been checked and the current program has valid syntax, it displays **All five steps complete!** and enables **Continue to Balloon Challenge →**. The same action is also available below the lab.
+The loop controls are a single row: Preview & check, Reset code, and Continue to Balloon Challenge. Copy and Download code controls have been removed from Loop Launch. The continuation button calls the balloon-stage transition directly. When all five tasks have been checked , it displays **All five steps complete!** and enables **Continue to Balloon Challenge →**. It appears beside Preview & check and Reset code. Completed steps remain checked when code is reset.
 
 Each scored round then has a slightly different reference:
 
@@ -160,3 +160,5 @@ JavaScript syntax and a DOM event harness check mastery gates, incorrect-answer 
 - Additional checks cover continuous spawning in all rounds at desktop/mobile sizes, both motion preferences, the green ELSE preview, and the inline loop continuation action.
 
 Display reference: [Sphero display commands](https://sites.google.com/sphero.com/sphero-edu-javascript-wiki/display). The `setDisplayImage` example targets BOLT+.
+
+Latest loop control fix: Continue is enabled after all five tasks have been checked, uses a direct transition handler, and sits in the same prominent control row as Preview & check and Reset code.
