@@ -46,7 +46,7 @@ All games are unlocked from the home screen. Within each game, students must mas
 
 An incorrect answer always deducts points. Round points can go below zero, so every mistake must be recovered through additional correct answers. For example, five correct conditional answers and one incorrect answer give 90 points; a sixth correct answer gives 110 points and meets the goal. Round points reset when the round is mastered. Overall accuracy continues accumulating throughout the game.
 
-Hello World and Loop Launch also deduct 10 points when a matching target balloon escapes. Letting a decoy escape has no penalty. Clicking the same balloon twice does not award twice. Matching values are judged against the currently displayed function call and prompt.
+Hello World and Loop Launch rounds 1–3 also deduct 10 points when a matching target balloon escapes. Loop Launch rounds 4–5 deduct points only for wrong clicks. Letting any balloon fall in those two rounds does not affect points, accuracy, or streak. Letting a decoy escape has no penalty. Clicking the same balloon twice does not award twice. Matching values are judged against the currently displayed function call and prompt.
 
 Conditionals allows exactly one attempt per question. An incorrect click immediately clears all three answer balloons, deducts 10 points, breaks the streak, and shows the correct answer with an explanation. Clicking the other balloons cannot recover points for that question. Students choose **Next scenario** to continue, or **Round mastered** once they meet both mastery requirements.
 
@@ -135,7 +135,7 @@ The scored section uses continuous falling balloons rather than question screens
 4. **Inside the Loop:** pop commands actually inside this reference's loop body.
 5. **Mixed Loop Challenge:** follow the target badge on each balloon, combining counts, conditions, updates, and repeated commands.
 
-Each round needs 100 points and at least 10 correct pops. Correct pops earn 10; wrong pops and missed targets cost 10. Decoys can escape without penalty. The reference stays fixed while balloons continuously spawn about every 0.9 seconds. Each mixed balloon keeps its own target badge so a new balloon never changes the target for one already falling. Speed increases each round, as in Hello World. The five editing steps and final score out of 1,000 remain.
+Each round needs 100 points and at least 10 correct pops. Correct pops earn 10; wrong pops cost 10. Missed targets cost 10 in rounds 1–3 only. In rounds 4–5, all unclicked balloons fall without affecting points, accuracy, or streak. Decoys can escape without penalty. The reference stays fixed while balloons continuously spawn about every 0.9 seconds. Each mixed balloon keeps its own target badge so a new balloon never changes the target for one already falling. Speed increases each round, as in Hello World. The five editing steps and final score out of 1,000 remain.
 
 Existing saved Loop Launch editing checks and progress are retained. When loading a prior question-based partial round, correct-answer points are converted from 20 to 10 while retaining its penalties and correct count. Completed reports remain available; use Replay this game to test the new experience from the beginning.
 
