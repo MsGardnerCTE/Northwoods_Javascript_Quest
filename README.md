@@ -1,85 +1,139 @@
-# Nighthawk JavaScript Arcade
+# Nighthawk JavaScript Mastery Games
 
-Three independent classroom games using the original Northwoods blue theme and Northwoods/CTE logos. Students may choose game 1, 2, or 3 immediately. There are no locked games or prerequisites.
+Three independent daily games for Ms. Gardner's Fundamentals of Computing class. The original Northwoods blue theme and Northwoods/CTE logos remain. Students can go directly to any game. Each game has five mastery rounds and its own daily Challenge Complete screen.
 
-## Update your existing GitHub website
+## Update the website you already created
 
-1. Extract the ZIP.
+1. Download and extract the ZIP.
 2. Open your existing `nighthawk-javascript-quest` repository on GitHub.
 3. Select **Code > Add file > Upload files**.
-4. Open the extracted folder and drag the website files into GitHub: `index.html`, `style.css`, `quest.css`, `game.js`, the new `arcade.js`, `northwoods.jpg`, and `cte.jpg`.
-5. Commit the changes. Keep `index.html` at the repository's top level. Upload files from inside the folder rather than the ZIP or the entire enclosing folder.
-6. If GitHub Pages is already enabled, it publishes the committed update automatically. Refresh the student website once publication completes. Use Ctrl+Shift+R if your browser displays the old version.
+4. Open the extracted folder. Upload these files from inside it:
+   - `index.html`
+   - `style.css`
+   - `quest.css`
+   - `game.js`
+   - `arcade.js`
+   - `northwoods.jpg`
+   - `cte.jpg`
+5. Click **Commit changes**. `index.html` must appear at the repository's top level. Upload the individual files rather than the ZIP or the enclosing folder.
+6. An already-enabled GitHub Pages website publishes this committed update. Refresh the website after publication completes. If you still see the old version, use Ctrl+Shift+R.
 
-For a new repository, enable **Settings > Pages > Deploy from a branch**, choose **main**, choose **/ (root)**, and save.
+Open `Preview.html` to try the whole game as a single local file. That preview file is optional for GitHub hosting.
 
-For a local single-file preview, open `Preview.html`. The separate files above are the files to upload to GitHub.
+For a new repository, choose **Settings > Pages > Deploy from a branch**, select **main** and **/ (root)**, then save.
 
-## Choose any game
+## Daily games and links
 
-The home screen has three play buttons. Navigation buttons also let students switch games anytime. Each game saves its own score, editing draft, completed tasks, active time, and completed rounds in this browser's local storage. Returning to a game restores the stage and remaining round time. This is a local record on that browser, not a teacher dashboard or cross-device login. Shared devices share that record. Replay resets only the selected game.
-
-Append `#game1`, `#game2`, or `#game3` to your website's URL to open that game directly. For example: `https://msgardnercte.github.io/nighthawk-javascript-quest/#game2`.
-
-## Time and activities
-
-| Game | Activities | Typical classroom time |
+| Day | Game | Completion requirement |
 |---|---|---|
-| 1: Hello World Pop | Six code-click practice questions; seven 60-second balloon rounds; exit ticket | About 8–10 minutes |
-| 2: If/Else Balloon Dash | Six code/balloon practice questions; five 60-second prediction rounds; three editing tasks; exit ticket | About 8–10 minutes |
-| 3: Loop Launch | Five editing tasks; five 60-second balloon rounds based on the edited loop; exit ticket | About 7–10 minutes |
+| 1 | Hello World | Master five balloon rounds |
+| 2 | Conditionals | Master five prediction rounds and complete three editing tasks |
+| 3 | Loop Launch | Complete five editing tasks and master five loop rounds |
 
-These are pacing estimates. Reading, editing, and reflection take different amounts of time for different students. The actual timed balloon play is seven minutes for Hello World and five minutes for each other game. No rounds end early because a point target is reached. Students manually start each round, with a short review between rounds. Pauses, round setup, round reviews, and time on a hidden browser tab do not advance the active-play timer.
+Each day's completion is independent. Students do not have to complete another day's game to earn the current day's completion screen.
 
-## Game 1: Hello World Pop
+Add `#game1`, `#game2`, or `#game3` to the website address to open the preferred game directly. For example, `https://msgardnercte.github.io/nighthawk-javascript-quest/#game2`.
 
-Students first click the message argument, the scrolling function name, the color object, the number argument, the boolean, and the defined startProgram function. Then they play seven different one-minute rounds:
+All games are unlocked from the home screen. Within each game, students must master the current round to access the next round.
 
-1. Message argument
-2. Scrolling function name
-3. Full RGB color argument
-4. Number argument 15
-5. Boolean argument true
-6. Start function name
-7. Mixed challenge: all arguments, avoiding functions and keywords
+## Mastery points and penalties
 
-Balloons fall continuously with relevant code pieces and decoys. Drops speed up gradually across rounds. There is no need to click decoys.
+| Game | Correct | Incorrect | Required to advance |
+|---|---:|---:|---|
+| Hello World | +10 | -10 | At least 100 round points and 10 correct pops |
+| Conditionals | +20 | -10 | At least 100 round points and 5 correct answers |
+| Loop Launch | +20 | -10 | At least 100 round points and 5 correct answers |
 
-## Game 2: If/Else Balloon Dash
+An incorrect answer always deducts points. Round points can go below zero, so every mistake must be recovered through additional correct answers. For example, five correct conditional answers and one incorrect answer give 90 points; a sixth correct answer gives 110 points and meets the goal. Round points reset when the round is mastered. Overall accuracy continues accumulating throughout the game.
 
-The code practice introduces the condition and alternate actions. Timed rounds show a current-speed scenario and a program reference, with falling action balloons. Early rounds use the original code and speeds such as 0, 1, and 72. Later rounds vary roll arguments and comparisons. The displayed program always reflects those changes. Students must inspect the actual code rather than memorize that speed 0 always means roll.
+Hello World also deducts 10 points when a matching target balloon escapes. Letting a decoy escape has no penalty. Clicking the same balloon twice does not award twice. Matching values are judged against the currently displayed function call and prompt.
 
-The editing lab retains all three challenges: trigger only ELSE for the stopped scenario, change all three roll arguments and preview IF, and change the ELSE main LED color and preview ELSE. The supplied duplicate `async` has been corrected. `setMainLed` changes the main LED, so the lab uses that label rather than matrix.
+Conditionals and Loop Launch allow exactly one attempt per question. An incorrect click immediately clears all three answer balloons, deducts 10 points, breaks the streak, and shows the correct answer with an explanation. Clicking the other balloons cannot recover points for that question. Students choose **Next scenario** to continue, or **Round mastered** once they meet both mastery requirements.
+
+There is no countdown or automatic advancement based on time. Questions in Conditionals and Loops remain available until answered. Hello World is still a fast movement game with missed-target penalties, but its progression depends on mastery points. Completion time varies with accuracy, reading, and editing pace.
+
+## Final score for student rewards
+
+Each completed daily game earns a final score out of 1,000:
+
+- 500 completion points for mastering all five rounds.
+- Up to 500 accuracy points, rounded from `500 × correct / (correct + wrong clicks + missed targets)`.
+
+A perfect completed game earns 1,000. A completed game with 90% accuracy earns 950. Bonus streak points do not bypass the mastery requirements. Streaks are displayed for motivation, but do not add to the reward score.
+
+Unscored introductory practice and editing tasks support learning without changing the final accuracy score. Reward scores use scored balloon rounds only. Each game has its own final score, so compare students within the same daily game.
+
+## Completion screen and teacher review
+
+Students enter a name when starting a game. Each completion screen shows:
+
+- **Hello World Challenge Complete!**, **Conditionals Challenge Complete!**, or **Loop Launch Challenge Complete!**
+- Student name and completion date/time.
+- Final score out of 1,000.
+- Accuracy and **5 / 5 rounds mastered**.
+- Correct answers, wrong clicks, missed targets, and best streak.
+- A table of each round's mastery points, correct answers, and mistakes.
+- An exit ticket and downloadable text results.
+
+Students can show you the completion screen, submit a screenshot to Canvas, or download and submit the text results. There is no shared online teacher leaderboard. Reports and progress are kept in the current browser, so students should submit their own reports for classwide comparison.
+
+## Game 1: Hello World
+
+Six unscored code-click practice questions introduce functions and arguments. Then:
+
+1. Hello World arguments only.
+2. Hello World function names only.
+3. Mixed arguments from familiar Sphero function calls.
+4. Mixed function names from those calls.
+5. Mixed mastery, alternating function-name and argument targets between waves.
+
+Mixed calls include `scrollMatrixText`, `roll`, `delay`, and `setMainLed`. Function calls and the wrapper are displayed in full before their pieces drop. A wave finishes before the next code reference is displayed, so old balloons never conflict with a newly displayed function call. The entire RGB object counts as one argument. `startProgram` is also a function name in the displayed wrapper. Keywords such as `async`, `function`, and `await` are decoys.
+
+Balloons drop about every 0.9 seconds where there is room. Falling speed starts at 90 pixels/second and increases by 12 each round, compared with the former 42-pixel/second starting speed. Correct clicks have an immediate pop/points effect. Balloon colors do not indicate correct answers.
+
+## Game 2: Conditionals
+
+Three unscored code-click questions introduce the original if/else example. Every scored round shows a different reference:
+
+| Round | Condition | Roll action | ELSE LED |
+|---|---|---|---|
+| 1 | `getSpeed() < 20` | heading 0, speed 60, duration 2 | Blue |
+| 2 | `getSpeed() > 50` | heading 90, speed 100, duration 3 | Red |
+| 3 | `getSpeed() <= 40` | heading 180, speed 80, duration 4 | Green |
+| 4 | `getSpeed() >= 72` | heading 270, speed 120, duration 2 | Yellow |
+| 5 | `getSpeed() === 100` | heading 45, speed 90, duration 5 | Purple |
+
+Scenarios use varied speeds such as 12, 20, 35, 40, 50, 51, 72, 99, 100, and 120. Each round includes boundary values that test equality. Only one branch runs. The action balloons include the roll arguments and LED color shown in that round's actual reference.
+
+The editing lab preserves the three requested modifications: trigger only ELSE for the stopped scenario, change direction/speed/duration in IF, and change the main LED color in ELSE. The original duplicate `async` is fixed. `setMainLed` changes the main LED, so the lab labels it main LED rather than matrix.
 
 ## Game 3: Loop Launch
 
-All five requested edits remain: five repetitions, false blocking, four-second delay, BonusSuper sound, and the added yellow LED command. Students then enter five timed balloon rounds based on their actual edited program:
+The editing lab preserves all five requested changes: five repetitions, false blocking, four-second delay, BonusSuper sound, and the added yellow LED command.
 
-1. Repetitions and counter values
-2. Sound waiting and continuation
-3. Per-repetition and total delay time
-4. LED and sound behavior
-5. Mixed loop questions
+Each scored round then has a slightly different reference:
 
-Questions vary within rounds. The screen model in the lab demonstrates the command order, light changes, and repetition count. The balloon questions read the selected repeat count, wait argument, delay, sound, and LED command from the edited program.
+1. Three repetitions, animal sound, true blocking, two-second delay.
+2. Five repetitions, BonusSuper sound, true blocking, one-second delay.
+3. Four repetitions, animal sound, false blocking, four-second delay.
+4. Three repetitions with a blue LED command added inside the loop.
+5. Five repetitions with BonusSuper sound, false blocking, a yellow LED command, and four-second delay.
 
-## Scoring and controls
+Question types vary within each round: repetitions, starting/last/stopping counter values, command order, selected sounds, blocking, per-repetition/total delay, repeated LED behavior, and full-program predictions. The editing draft can be copied to Sphero Edu separately; the scored rounds use the five stated reference programs so each round looks different.
 
-- Correct balloon: +25 points.
-- Every five correct pops in a row: +50 streak bonus.
-- Wrong balloon: -10 points, score never below zero.
-- Missed target: -5 points.
-- Code/tutorial/lab milestone: +100 points, once per milestone per game.
-- Every completed game shows points, correct pops, best streak, active time, and a downloadable exit ticket.
-- Pause freezes both the timer and balloons. Hiding the browser tab automatically pauses an active round.
-- Balloons are native buttons, supporting touch, mouse, and keyboard Space/Enter.
-- A system reduced-motion preference uses stationary targets with timed expiry.
+## Progress, accessibility, and robot testing
 
-## Robot testing
+Games save separate student names, progress, points, accuracy, editing drafts, completed tasks, and results in this browser. Switching games or reloading resumes the current stage. Replay resets only that game. This update starts fresh mastery progress using a new storage key; previous timed-game progress is not counted as mastery.
 
-This website previews behavior and checks the demonstrated program structures. It does not connect directly to a robot or execute arbitrary JavaScript. Students copy or download code from the editing lab and run it in Sphero Edu with a connected robot. Free exploration outside the supported template belongs in Sphero Edu.
+Pause stops balloon movement. Hiding the browser tab automatically pauses an active balloon round. Balloons are buttons supporting mouse, touch, and keyboard Space/Enter. A system reduced-motion preference uses stationary targets in Hello World, with target expiry still applying. Prediction balloons remain available until answered.
 
-`Sound.Animal.play(true)` chooses a random animal sound. True waits for sound completion; false continues immediately while audio plays. False does not mute sound. These Sphero Edu functions play audio through the programming device. The screen model uses compressed illustrative timing and no Sphero audio recordings. Motion on a robot depends on aiming and the surface.
+The website models behavior on screen. Copy or download edited code and run it in Sphero Edu with a connected robot. The editing checks support the demonstrated program structures rather than arbitrary JavaScript. Free exploration beyond those structures belongs in Sphero Edu.
+
+`Sound.Animal.play(true)` selects a random animal sound. True waits for playback; false starts sound and continues without waiting. False does not mute audio. These functions play sound through the programming device. The lab preview uses compressed illustrative timing and no Sphero audio recordings.
+
+## Validation
+
+JavaScript syntax and a DOM event harness check mastery gates, incorrect-answer recovery, no timer-based advancement, one-attempt protection, mixed function/argument targets, five unique conditional references, five unique loop references, boundary scenarios, all editing tasks, independent daily completion screens, accuracy scoring, pause, student-name entry, saved partial progress, restored reports, and replay isolation. Full browser rendering could not be tested in the build environment.
 
 ## References
 
@@ -87,7 +141,3 @@ This website previews behavior and checks the demonstrated program structures. I
 - [Sphero movement](https://sites.google.com/sphero.com/sphero-edu-javascript-wiki/movement)
 - [Sphero lights](https://sites.google.com/sphero.com/sphero-edu-javascript-wiki/lights)
 - [GitHub Pages publishing](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
-
-## Validation
-
-JavaScript syntax and a DOM event harness check all tutorial/editing paths, independent access, seven/five/five full timed rounds, pause/resume, score isolation, draft validation, saved progress, reload, replay isolation, mid-round restoration, duplicate-pop protection, and code validation. A full browser rendering test was unavailable in the build environment.
