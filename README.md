@@ -27,7 +27,7 @@ For a new repository, choose **Settings > Pages > Deploy from a branch**, select
 | Day | Game | Completion requirement |
 |---|---|---|
 | 1 | Hello World | Master five balloon rounds |
-| 2 | Conditionals | Master five prediction rounds and complete three editing tasks |
+| 2 | Conditionals | Master five prediction rounds and complete three guided question steps |
 | 3 | Loop Launch | Complete five editing tasks and master five loop rounds |
 
 Each day's completion is independent. Students do not have to complete another day's game to earn the current day's completion screen.
@@ -87,9 +87,9 @@ Six unscored code-click practice questions introduce functions and arguments. Th
 4. Mixed function names from those calls.
 5. Mixed mastery, alternating function-name and argument targets between waves.
 
-Mixed calls include `scrollMatrixText`, `roll`, `delay`, and `setMainLed`. Function calls and the wrapper are displayed in full before their pieces drop. A wave finishes before the next code reference is displayed, so old balloons never conflict with a newly displayed function call. The entire RGB object counts as one argument. `startProgram` is also a function name in the displayed wrapper. Keywords such as `async`, `function`, and `await` are decoys.
+Mixed calls include `scrollMatrixText`, `roll`, `delay`, `setMainLed`, `spin`, `speak`, and `setDisplayImage`. The full mixed reference contains all of these calls. It stays fixed during the round, so balloons always match the visible reference. The entire RGB object counts as one argument. `startProgram` is a function name in the wrapper. Keywords are distractors.
 
-Balloons drop about every 0.9 seconds where there is room. Falling speed starts at 90 pixels/second and increases by 12 each round, compared with the former 42-pixel/second starting speed. Correct clicks have an immediate pop/points effect. Balloon colors do not indicate correct answers.
+Balloons keep dropping at about 0.9-second intervals wherever there is room. The game does not wait for a batch to clear. Falling speed starts at 90 pixels/second and increases by 12 each round. Round 5 puts a FUNCTION or ARGUMENT target badge on each balloon: pop only code pieces that match their own badge. That allows continuous drops without changing the target for balloons already on screen.
 
 ## Game 2: Conditionals
 
@@ -105,11 +105,19 @@ Three unscored code-click questions introduce the original if/else example. Ever
 
 Scenarios use varied speeds such as 12, 20, 35, 40, 50, 51, 72, 99, 100, and 120. Each round includes boundary values that test equality. Only one branch runs. The action balloons include the roll arguments and LED color shown in that round's actual reference.
 
-The editing lab preserves the three requested modifications: trigger only ELSE for the stopped scenario, change direction/speed/duration in IF, and change the main LED color in ELSE. The original duplicate `async` is fixed. `setMainLed` changes the main LED, so the lab labels it main LED rather than matrix.
+After the scored rounds, students complete guided questions instead of editing conditional code:
+
+1. Choose the condition that sends a stopped robot to ELSE.
+2. Identify direction, speed, and duration with three short questions.
+3. Predict the main LED color when ELSE runs.
+
+Each question displays the exact program and scenario. Choosing an answer reveals the correct explanation and a matching robot preview. The green LED question explicitly uses speed 72, making `getSpeed() < 1` false so ELSE runs. Wrong answers end that attempt and offer a fresh guided try. Guided practice is unscored; the reward score remains based on the scored five rounds. After all guided questions are correct, students can open the daily Challenge Complete screen.
 
 ## Game 3: Loop Launch
 
-The editing lab preserves all five requested changes: five repetitions, false blocking, four-second delay, BonusSuper sound, and the added yellow LED command.
+The loop editing lab preserves all five requested changes: five repetitions, false blocking, four-second delay, BonusSuper sound, and the added yellow LED command.
+
+An inline continuation panel sits beside the checklist. When all five tasks have been checked and the current program has valid syntax, it displays **All five steps complete!** and enables **Continue to Balloon Challenge →**. The same action is also available below the lab.
 
 Each scored round then has a slightly different reference:
 
@@ -141,3 +149,14 @@ JavaScript syntax and a DOM event harness check mastery gates, incorrect-answer 
 - [Sphero movement](https://sites.google.com/sphero.com/sphero-edu-javascript-wiki/movement)
 - [Sphero lights](https://sites.google.com/sphero.com/sphero-edu-javascript-wiki/lights)
 - [GitHub Pages publishing](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+
+## Latest update
+
+- Continuous Hello World drops in every round, with no batch-clear pauses.
+- Added spin, speak, and setDisplayImage examples to rounds 3–5.
+- Replaced conditional code editing with guided Q&A and branch/color previews.
+- Added a visible, enabled Loop Launch continuation button next to completed tasks.
+- Existing completed Conditionals sessions reopen at the new guided questions; other saved game progress remains. Use **Replay this game** on a completion screen to start a fresh test.
+- Additional checks cover continuous spawning in all rounds at desktop/mobile sizes, both motion preferences, the green ELSE preview, and the inline loop continuation action.
+
+Display reference: [Sphero display commands](https://sites.google.com/sphero.com/sphero-edu-javascript-wiki/display). The `setDisplayImage` example targets BOLT+.
