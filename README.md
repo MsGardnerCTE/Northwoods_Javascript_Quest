@@ -42,15 +42,15 @@ All games are unlocked from the home screen. Within each game, students must mas
 |---|---:|---:|---|
 | Hello World | +10 | -10 | At least 100 round points and 10 correct pops |
 | Conditionals | +20 | -10 | At least 100 round points and 5 correct answers |
-| Loop Launch | +20 | -10 | At least 100 round points and 5 correct answers |
+| Loop Launch | +10 | -10 | At least 100 round points and 10 correct pops |
 
 An incorrect answer always deducts points. Round points can go below zero, so every mistake must be recovered through additional correct answers. For example, five correct conditional answers and one incorrect answer give 90 points; a sixth correct answer gives 110 points and meets the goal. Round points reset when the round is mastered. Overall accuracy continues accumulating throughout the game.
 
-Hello World also deducts 10 points when a matching target balloon escapes. Letting a decoy escape has no penalty. Clicking the same balloon twice does not award twice. Matching values are judged against the currently displayed function call and prompt.
+Hello World and Loop Launch also deduct 10 points when a matching target balloon escapes. Letting a decoy escape has no penalty. Clicking the same balloon twice does not award twice. Matching values are judged against the currently displayed function call and prompt.
 
-Conditionals and Loop Launch allow exactly one attempt per question. An incorrect click immediately clears all three answer balloons, deducts 10 points, breaks the streak, and shows the correct answer with an explanation. Clicking the other balloons cannot recover points for that question. Students choose **Next scenario** to continue, or **Round mastered** once they meet both mastery requirements.
+Conditionals allows exactly one attempt per question. An incorrect click immediately clears all three answer balloons, deducts 10 points, breaks the streak, and shows the correct answer with an explanation. Clicking the other balloons cannot recover points for that question. Students choose **Next scenario** to continue, or **Round mastered** once they meet both mastery requirements.
 
-There is no countdown or automatic advancement based on time. Questions in Conditionals and Loops remain available until answered. Hello World is still a fast movement game with missed-target penalties, but its progression depends on mastery points. Completion time varies with accuracy, reading, and editing pace.
+There is no countdown or automatic advancement based on time. Questions in Conditionals remain available until answered. Hello World and Loop Launch are continuous balloon movement games with missed-target penalties, but its progression depends on mastery points. Completion time varies with accuracy, reading, and editing pace.
 
 ## Final score for student rewards
 
@@ -127,15 +127,25 @@ Each scored round then has a slightly different reference:
 4. Three repetitions with a blue LED command added inside the loop.
 5. Five repetitions with BonusSuper sound, false blocking, a yellow LED command, and four-second delay.
 
-Question types vary within each round: repetitions, starting/last/stopping counter values, command order, selected sounds, blocking, per-repetition/total delay, repeated LED behavior, and full-program predictions. The editing draft can be copied to Sphero Edu separately; the scored rounds use the five stated reference programs so each round looks different.
+The scored section uses continuous falling balloons rather than question screens:
+
+1. **Repeat Count:** pop the number of repetitions, starting from counter 0.
+2. **Find the Condition:** pop the comparison that keeps the loop running.
+3. **Find the Update:** pop `count++`, which adds one after each repetition.
+4. **Inside the Loop:** pop commands actually inside this reference's loop body.
+5. **Mixed Loop Challenge:** follow the target badge on each balloon, combining counts, conditions, updates, and repeated commands.
+
+Each round needs 100 points and at least 10 correct pops. Correct pops earn 10; wrong pops and missed targets cost 10. Decoys can escape without penalty. The reference stays fixed while balloons continuously spawn about every 0.9 seconds. Each mixed balloon keeps its own target badge so a new balloon never changes the target for one already falling. Speed increases each round, as in Hello World. The five editing steps and final score out of 1,000 remain.
+
+Existing saved Loop Launch editing checks and progress are retained. When loading a prior question-based partial round, correct-answer points are converted from 20 to 10 while retaining its penalties and correct count. Completed reports remain available; use Replay this game to test the new experience from the beginning.
 
 ## Progress, accessibility, and robot testing
 
 Games save separate student names, progress, points, accuracy, editing drafts, completed tasks, and results in this browser. Switching games or reloading resumes the current stage. Replay resets only that game. This update starts fresh mastery progress using a new storage key; previous timed-game progress is not counted as mastery.
 
-Pause stops balloon movement. Hiding the browser tab automatically pauses an active balloon round. Balloons are buttons supporting mouse, touch, and keyboard Space/Enter. A system reduced-motion preference uses stationary targets in Hello World, with target expiry still applying. Prediction balloons remain available until answered.
+Pause stops balloon movement. Hiding the browser tab automatically pauses an active balloon round. Balloons are buttons supporting mouse, touch, and keyboard Space/Enter. A system reduced-motion preference uses stationary targets in Hello World and Loop Launch, with target expiry still applying. Prediction balloons remain available until answered.
 
-The website models behavior on screen. Copy or download edited code and run it in Sphero Edu with a connected robot. The editing checks support the demonstrated program structures rather than arbitrary JavaScript. Free exploration beyond those structures belongs in Sphero Edu.
+The website models behavior on screen. Select and copy the edited code, then run it in Sphero Edu with a connected robot. The editing checks support the demonstrated program structures rather than arbitrary JavaScript. Free exploration beyond those structures belongs in Sphero Edu.
 
 `Sound.Animal.play(true)` selects a random animal sound. True waits for playback; false starts sound and continues without waiting. False does not mute audio. These functions play sound through the programming device. The lab preview uses compressed illustrative timing and no Sphero audio recordings.
 
@@ -162,3 +172,5 @@ JavaScript syntax and a DOM event harness check mastery gates, incorrect-answer 
 Display reference: [Sphero display commands](https://sites.google.com/sphero.com/sphero-edu-javascript-wiki/display). The `setDisplayImage` example targets BOLT+.
 
 Latest loop control fix: Continue is enabled after all five tasks have been checked, uses a direct transition handler, and sits in the same prominent control row as Preview & check and Reset code.
+
+Latest update: Loop Launch now uses five continuous balloon-drop rounds. Checks cover the target pools, mixed badges, penalties, decoy escape, repeated-click protection, recovery gates, completion, and continuous spawning at desktop/mobile sizes in both motion modes.
