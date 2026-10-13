@@ -46,7 +46,7 @@ All games are unlocked from the home screen. Within each game, students must mas
 
 An incorrect answer always deducts points. Round points can go below zero, so every mistake must be recovered through additional correct answers. For example, five correct conditional answers and one incorrect answer give 90 points; a sixth correct answer gives 110 points and meets the goal. Round points reset when the round is mastered. Overall accuracy continues accumulating throughout the game.
 
-Hello World and Loop Launch rounds 1–3 also deduct 10 points when a matching target balloon escapes. Loop Launch rounds 4–5 deduct points only for wrong clicks. Letting any balloon fall in those two rounds does not affect points, accuracy, or streak. Letting a decoy escape has no penalty. Clicking the same balloon twice does not award twice. Matching values are judged against the currently displayed function call and prompt.
+Hello World rounds 1–4 and Loop Launch rounds 1–3 also deduct 10 points when a matching target balloon escapes. Hello World round 5 has no penalty for any unclicked balloon, including points, accuracy, and streak. Loop Launch rounds 4–5 deduct points only for wrong clicks. Letting any balloon fall in those two rounds does not affect points, accuracy, or streak. Letting a decoy escape has no penalty. Clicking the same balloon twice does not award twice. Matching values are judged against the currently displayed function call and prompt.
 
 Conditionals allows exactly one attempt per question. An incorrect click immediately clears all three answer balloons, deducts 10 points, breaks the streak, and shows the correct answer with an explanation. Clicking the other balloons cannot recover points for that question. Students choose **Next scenario** to continue, or **Round mastered** once they meet both mastery requirements.
 
@@ -174,3 +174,9 @@ Display reference: [Sphero display commands](https://sites.google.com/sphero.com
 Latest loop control fix: Continue is enabled after all five tasks have been checked, uses a direct transition handler, and sits in the same prominent control row as Preview & check and Reset code.
 
 Latest update: Loop Launch now uses five continuous balloon-drop rounds. Checks cover the target pools, mixed badges, penalties, decoy escape, repeated-click protection, recovery gates, completion, and continuous spawning at desktop/mobile sizes in both motion modes.
+
+## Hello World restart update
+
+A Restart this level button appears next to Pause in all five Hello World balloon levels. It resets only the current level's points, correct pops, wrong clicks, missed targets, and current streak. Previously mastered levels, their results, the student name, and the other games are preserved. The level returns to its Ready screen; select Start round to play again. Restarted attempts are removed from overall accuracy. Active time is retained.
+
+Hello World level 5 deducts points only for wrong clicks. Any unclicked balloon can fall or expire without changing points, accuracy, or streak. Existing saved level-5 missed-target penalties are corrected once when this update loads. Hello World levels 1–4 keep their earlier missed-target behavior.
